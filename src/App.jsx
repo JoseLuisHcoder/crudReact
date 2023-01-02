@@ -8,6 +8,7 @@ import { useFormContext } from 'react-hook-form'
 
 function App() {
   const [users, setUsers] = useState()
+  const [updateInfo, setUpdateInfo] = useState()
 
 
 const getAllUsers = () => {
@@ -35,7 +36,14 @@ const deleteUserById = id => {
     .catch(err => console.log(err))
 }
 
-  console.log(users);
+const updateUserById = (id, data) => {
+  console.log(id);
+  const URL = `https://users-crud.academlo.tech/users/${id}`
+  axios.patch(URL, data)
+    .then(res => getAllUsers())
+    .catch(err => console.log(err))
+}
+ 
   return (
     <div className="App">
       <h1>Users</h1>
@@ -44,6 +52,9 @@ const deleteUserById = id => {
       <section>
         <FormUser 
           createNewUser={createNewUser}
+          updateInfo={updateInfo}
+          updateUserById={updateUserById}
+          setUpdateInfo={setUpdateInfo}
         />
       </section>
       <div className='user__container'>
@@ -53,6 +64,7 @@ const deleteUserById = id => {
             key={user.id}
             user={user}
             deleteUserById={deleteUserById}
+            setUpdateInfo={setUpdateInfo}
             />
           ))
         }
