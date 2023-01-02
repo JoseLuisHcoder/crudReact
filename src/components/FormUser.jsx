@@ -39,6 +39,7 @@ const FormUser = ({createNewUser}) => {
                     <input {...register('birthday')} type="date" id='birthday' placeholder='birthday' />
                 </li>
             </ul>
+            
             <button>Submit</button>
 
 
