@@ -55,7 +55,7 @@ const FormUser = ({createNewUser, updateInfo, updateUserById, setUpdateInfo}) =>
                 </li>
             </ul>
             
-            <button>Submit</button>
+            <button>{updateInfo ? "Update Info" : "Create User" }</button>
 
 
 

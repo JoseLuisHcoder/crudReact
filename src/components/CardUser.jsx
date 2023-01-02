@@ -3,7 +3,7 @@ import React from 'react'
 const CardUser = ({user, deleteUserById, setUpdateInfo}) => {
 
     const getUpdateInfo = () => {
-        setUpdateInfo(user);
+        setUpdateInfo(user)
     }
   return (
     <div>

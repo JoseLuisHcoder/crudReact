@@ -38,8 +38,9 @@ const deleteUserById = id => {
 
 const updateUserById = (id, data) => {
   console.log(id);
-  const URL = `https://users-crud.academlo.tech/users/${id}`
-  axios.patch(URL, data)
+  console.log(data);
+  const URL = `https://users-crud.academlo.tech/users/${id}/`
+  axios.put(URL, data)
     .then(res => getAllUsers())
     .catch(err => console.log(err))
 }
